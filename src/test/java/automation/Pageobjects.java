@@ -33,6 +33,9 @@ public class Pageobjects {
 		@FindBy(linkText="Got it!")
 		WebElement got;
 		
+		@FindBy(xpath="//span[@class='ant-select-selection-item']")
+		WebElement role;
+		
 		public void loginApplication()
 		{
 			useremail.sendKeys("madihatasneem222@gmail.com");
@@ -44,6 +47,8 @@ public class Pageobjects {
 			got.click();
 			Thread.sleep(2000);
 			embeddedlink.click();
+			Thread.sleep(3000);
+			role.click();
 			
 		}
 
