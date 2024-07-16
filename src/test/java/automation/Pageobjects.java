@@ -27,10 +27,10 @@ public class Pageobjects {
 		@FindBy(xpath="//button/span[2]")
 		WebElement loginbtn;
 		
-		@FindBy(xpath="//a[@tittle='Embedded Dashboard']")
+		@FindBy(linkText="Embedded Dashboard")
 		WebElement embeddedlink;
 		
-		@FindBy(id="cookieconsent:desc")
+		@FindBy(linkText="Got it!")
 		WebElement got;
 		
 		public void loginApplication()
@@ -39,10 +39,12 @@ public class Pageobjects {
 			password.sendKeys("Ashwini@123");
 			loginbtn.click();
 		}
-		public void togo()
+		public void togo() throws InterruptedException
 		{
 			got.click();
+			Thread.sleep(2000);
 			embeddedlink.click();
+			
 		}
 
 }
